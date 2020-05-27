@@ -1,0 +1,66 @@
+html, body, .grid-container { height: 100%; margin: 0; }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 0.4fr 1.2fr;
+  grid-template-rows: 0.5fr 1.5fr 1fr;
+  gap: 0px;
+  grid-template-areas: "header header" "work clicker" "shop shop";
+  height: 100vh;
+  grid-auto-rows: minmax(10px,auto);
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 0.5fr repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-auto-rows: minmax(10px,auto);
+  gap: 0px;
+  grid-template-areas: "name-city name-city name-city buttons" "basics-ressources basics-ressources basics-ressources basics-ressources" "secondary-ressources secondary-ressources secondary-ressources secondary-ressources";
+  grid-area: header;
+}
+
+.basics-ressources { grid-area: basics-ressources; }
+
+.basics-ressources nav ul , .secondary-ressources nav ul { width: 100%; }
+
+.secondary-ressources { grid-area: secondary-ressources; }
+
+.name-city { grid-area: name-city; }
+
+.buttons { grid-area: buttons; }
+
+nav {
+    height: 100%;
+}
+
+.buttons nav , .collapse form {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.work {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100% 0.6fr 1fr;
+  gap: 0px;
+  grid-template-areas: "pic" "infos" "infos";
+  grid-area: work;
+  grid-auto-rows: minmax(10px,auto);
+}
+
+.clicker {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 0px;
+  grid-template-areas: ". . . . . . . . ." ". . . . . . . . ." ". . . . . . . . ." ". . . . . . . . ." ". . . . . . . . .";
+  grid-area: clicker;
+  background-color: grey;
+  grid-auto-rows: minmax(10px,auto);
+}
+
+.shop { grid-area: shop; }
+
+
